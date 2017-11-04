@@ -1,0 +1,15 @@
+clarifai==2.0.31
+click==6.7
+configparser==3.5.0
+enum34==1.1.6
+Flask==0.12.2
+future==0.15.2
+itsdangerous==0.24
+Jinja2==2.9.6
+jsonschema==2.5.1
+MarkupSafe==1.0
+Pillow==2.9.0
+pymongo==3.5.1
+requests==2.13.0
+Werkzeug==0.12.2
+wheel==0.29.0
