@@ -67,7 +67,7 @@ def upload_file():
     with open(fileFullPath, 'wb+') as f:
         # request.environ['CONTENT_TYPE'] = 'application/something_Flask_ignores'
         # print("cosa: ", request.environ['CONTENT_TYPE'])
-        input = request.get_data()
+        input = request.stream.read()
         # print("Input: ", input)
         f.write(input)
     json_ingredients = fins_ingr_princ(fileFullPath)
