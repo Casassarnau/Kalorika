@@ -61,6 +61,18 @@ def upload_file_form():
             # return render_template('pregunta.html', var1=json)
 
 
+def magic_saving_file(file):
+    stream = get_input_stream(request.environ, safe_fallback=False)
+    chunksize = 8192
+    while True:
+        chunk = stream.read(chunksize)
+        if chunk and chunk != b'0':
+            # print(chunk)
+            file.write(chunk)
+        else:
+            break
+
+
 @app.route('/upload', methods=['POST', 'PUT'])
 def upload_file():
     # request.shallow = True
@@ -69,9 +81,7 @@ def upload_file():
     with open(fileFullPath, 'wb+') as f:
         # request.environ['CONTENT_TYPE'] = 'application/something_Flask_ignores'
         # print("cosa: ", request.environ['CONTENT_TYPE'])
-        input = get_input_stream(request.environ, safe_fallback=False).read()
-        print("Input: ", input)
-        f.write(input)
+        magic_saving_file(f)
     json_ingredients = fins_ingr_princ(fileFullPath)
     return json_ingredients
     # return "A"
