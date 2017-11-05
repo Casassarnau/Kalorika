@@ -2,6 +2,8 @@ import os
 import json
 from flask import Flask, request, redirect, url_for, flash, send_from_directory, render_template
 from werkzeug.utils import secure_filename
+from werkzeug.wsgi import get_input_stream
+
 from Aplicacio import fins_ingr_princ, fins_resultat
 from io import BytesIO
 
@@ -67,7 +69,7 @@ def upload_file():
     with open(fileFullPath, 'wb+') as f:
         # request.environ['CONTENT_TYPE'] = 'application/something_Flask_ignores'
         # print("cosa: ", request.environ['CONTENT_TYPE'])
-        input = request.stream.read()
+        input = get_input_stream(request.environ, safe_fallback=False)
         print("Input: ", input)
         f.write(input)
     json_ingredients = fins_ingr_princ(fileFullPath)
