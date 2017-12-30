@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Kreon" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <meta charset="UTF-8">
+    <title>Kalorika</title>
+</head>
+<body>
+    <div class="titol" id="title">
+        <h1 style="margin-top: 50px; margin-bottom: 50px;">Kalorika</h1>
+    </div>
+    <img class="imatge" src="/uploads/{{filename}}">
+    <div class="text_sec" style="text-shadow: -1px -1px 1px #2b4214;">
+        <h2>Choose the main ingredient</h2>
+    </div>
+    <form class="out_box" style="width: 400px; height: 30px;" action="/upload-ingredient" enctype=multipart/form-data>
+        <select name="ingredient_principal" class="in_box" style="width:75%; text-align: center; border-radius: 7px 0 0 7px;">
+            {% for ingredient in llista_ingr %}
+                <option value="{{ ingredient }}">{{ ingredient }}</option>
+            {% endfor %}
+        </select>
+        <input type="hidden" value="{{ llista_ingr|join(',') }}" name="ingredients">
+        <input class="input_upload" type="submit" value="Send">
+        <input type="hidden" value="{{filename}}" name="filename">
+    </form>
+</body>
+
+</html>

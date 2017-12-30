@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import sys
 import json
 from clarifai.rest import ClarifaiApp
@@ -30,17 +31,17 @@ def fer_llista_petita(llista):
     llista_nova = []
     for i in llista:
         x = 0
-        if i['value'] >= 0.9:
+        if i['value'] >= 0.85:
             verify = edamam(i['name'], "100g ")[0]
-            if verify > 0 and i['name'] != "meat":
+            if verify > 0 and i['name'] != "meat" and i['name'] != "steak" and i['name'] != "beef steak":
                 llista_nova.append(i['name'])
-        if len(llista_nova) <= 2 and i['value'] >= 0.85 and i['name'] not in llista_nova:
+        if len(llista_nova) < 2 and i['value'] >= 0.8 and i['name'] not in llista_nova:
             verify = edamam(i['name'], "100g ")[0]
-            if verify > 0 and i['name'] != "meat":
+            if verify > 0 and i['name'] != "meat" and i['name'] != "steak" and i['name'] != "beef steak":
                 llista_nova.append(i['name'])
-        if len(llista_nova) <= 2 and i['value'] >= 0.8 and i['name'] not in llista_nova:
+        if len(llista_nova) < 2 and i['value'] >= 0.75 and i['name'] not in llista_nova:
             verify = edamam(i['name'], "100g ")[0]
-            if verify > 0 and i['name'] != "meat":
+            if verify > 0 and i['name'] != "meat" and i['name'] != "steak" and i['name'] != "beef steak":
                 llista_nova.append(i['name'])
         x += 1
     return llista_nova
@@ -54,11 +55,7 @@ def fins_ingr_princ(filename):
 
     # Fa la llista més petita
     llista_ingr = fer_llista_petita(result['outputs'][0]['data']['concepts'])
-
-    # Crea fitxer json
-    datos = {"ingredients": llista_ingr}
-    json_ingr = json.dumps(datos)
-    return json_ingr
+    return llista_ingr
 
 
 def fins_resultat(ingr_principal, llista_ingr):
@@ -77,8 +74,5 @@ def fins_resultat(ingr_principal, llista_ingr):
     kcal_tot = str(round(kcal_tot + kcal_sec, 2))
     fat_tot = str(round(fat_tot + fat_sec, 2))
     carb_tot = str(round(carb_tot + carb_sec, 2))
-
-    # Crea fitxer json
-    final = {"calories": kcal_tot, "greixos": fat_tot, "carbohidrats": carb_tot}
-    json_final = json.dumps(final)
-    return json_final
+    resultat=[kcal_tot, fat_tot,carb_tot]
+    return resultat

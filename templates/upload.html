@@ -1,12 +1,28 @@
-<!doctype html>
-    <title>Kalorika</title>
-    <h1>Upload new File</h1>
-    <form method=post action="/upload-form" enctype=multipart/form-data>
-      <p><input type=file name=file>
-         <input type=submit value=Upload>
-    </form>
-<h1>Sort ingredients</h1>
-    <form method=post action="/ingredients">
-      <p><input type=text name=ingredients>
-         <input type="submit" value="OK">
-    </form>
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Kreon" rel="stylesheet">
+        <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" sizes="96x96" href="/icon/favicon-96x96.png">
+        <link rel="stylesheet" type="text/css" href="/static/style.css">
+        <meta charset="UTF-8">
+        <title>Kalorika</title>
+    </head>
+    <body>
+    <div class="titol" id="title">
+        <h1 style="font-size: 250%;">Kalorika</h1>
+    </div>
+    <form class="out_box" style="width: 500px; height: 30px;" method=post action="/upload-image" enctype=multipart/form-data>
+        <input type="file" name="file" id="file" class="input_file"
+               onchange="document.getElementById('file_name').value = this.value.split('\\').pop().split('/').pop()"
+               multiple accept='image/*'>
+        <label for="file" >Choose file</label>
+        <input type="button" class="in_box" style="width: 50%; text-align: left;" id="file_name" value="No file chosen...">
+        <input class ="input_upload" type="submit" value="Upload" >
+   </form>
+</body>
+
+</html>

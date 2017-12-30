@@ -2,3 +2,4 @@
 __pycache__
 pip.py
 env
+*.pyc

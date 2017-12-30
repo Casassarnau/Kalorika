@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def tipus_ingr(llista_tipus, llista, ingredient, quantitat1, quantitat2):
     quantitat_princ = 0
     quantitat_sec = 0
@@ -16,7 +17,7 @@ def tipus_ingr(llista_tipus, llista, ingredient, quantitat1, quantitat2):
 def llista_pes(llista, ingredient):
     peixos = ["mackerel", "fish", "fish steak", "salmon steak", "fish fillet", "salmon", "bass", "sea bass",
               "fried calamari", "shrimp", "prawn"]
-    q_p, q_s, ll_neta = tipus_ingr(peixos, llista, ingredient, "150g ", "10g ")
+    q_p, q_s, ll_neta = tipus_ingr(peixos, llista, ingredient, "150g ", "30g ")
     if q_p:
         return q_p, q_s, ll_neta
 
@@ -28,7 +29,7 @@ def llista_pes(llista, ingredient):
 
     llegum = ["lentil", "beans", "lima bean", "pigeon pea", "garbanzo", "kidney bean", "chickpeas", "indian pea", "pea",
               "succotash", "moth bean", "horse gram", "buckwheat", "groats", "mung bean"]
-    q_p, q_s, ll_neta = tipus_ingr(llegum, llista, ingredient, "170g cooked ", "20g ")
+    q_p, q_s, ll_neta = tipus_ingr(llegum, llista, ingredient, "170g cooked ", "30g ")
     if q_p:
         return q_p, q_s, ll_neta
 
@@ -41,18 +42,17 @@ def llista_pes(llista, ingredient):
 
     verdura = ["vegetable", "tomato", "carrot", "squash", "pumpkin", "celery", "curry", "cucumber", "broccoli",
                "eggplant", "avocado", "onion", "cauliflower", "asparagus", "courgette", "pepper"]
-    q_p, q_s, ll_neta = tipus_ingr(verdura, llista, ingredient, "200g ", "10g ")
+    q_p, q_s, ll_neta = tipus_ingr(verdura, llista, ingredient, "150g ", "50g ")
     if q_p:
         return q_p, q_s, ll_neta
 
     fruita = ["berry", "blueberry", "strawberry", "blackberry", "raspberry", "banana", "black currant", "pineapple",
               "apple", "lemon", "watermelon", "pear", "peach", "melon", "grape", "grapefruit"]
-    q_p, q_s, ll_neta = tipus_ingr(fruita, llista, ingredient, "150g ", "20g ")
+    q_p, q_s, ll_neta = tipus_ingr(fruita, llista, ingredient, "150g ", "30g ")
     if q_p:
         return q_p, q_s, ll_neta
 
-    begudes = ["whisky", "rum", "brandy", "cognac", "liqueur", "tequila", "wine", "vodka",
-               "beer", "syrup", "coke", "lemonade", "milk"]
+    begudes = ["wine", "beer", "syrup", "coke", "lemonade", "milk", "tea"]
     q_p, q_s, ll_neta = tipus_ingr(begudes, llista, ingredient, "180ml ", "50g ")
     if q_p:
         n = 0
@@ -62,7 +62,7 @@ def llista_pes(llista, ingredient):
             n += 1
         return q_p, q_s, ll_neta
 
-    begudes_a = ["whisky", "rum", "brandy", "cognac", "liqueur", "tequila", "wine", "vodka"]
+    begudes_a = ["whisky", "rum", "brandy", "cognac", "liqueur", "tequila", "vodka"]
     q_p, q_s, ll_neta = tipus_ingr(begudes_a, llista, ingredient, "30ml ", "0g ")
     if q_p:
         return q_p, q_s, ll_neta

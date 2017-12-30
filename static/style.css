@@ -1,0 +1,94 @@
+    html {
+        width: 100%;
+    }
+    body  {
+        background-color: #2e7d32;
+        background-image: url(http://www.transparenttextures.com/patterns/light-sketch.png);
+    }
+    .titol{
+        text-align: center;
+        color: white;
+        font-family: 'Kreon', serif;
+        font-style: normal;
+        font-size: 300%;
+        text-shadow: -2px -2px 1px #005005;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .out_box{
+        padding: 15px;
+        margin: 0 auto;
+        background: rgba(0, 80, 5,.35);
+        border-radius: 10px;
+        box-shadow: 0 1px 1px rgba(0, 80, 5,.5) inset, 0 1px 0 rgba(0, 80, 5,.2);
+    }
+    .text_ter {
+        font-family: Calibri;
+        font-size: 125%;
+        color: white;
+        text-align: left;
+        font-style: normal;
+    }
+    .input_file {
+	    width: 0.1px;
+	    height: 0.1px;
+	    opacity: 0;
+	    overflow: hidden;
+	    position: absolute;
+	    z-index: -1;
+}
+    .input_file + label{
+        border: 0;
+        height: 30px;
+        width: 25%;
+        font-family: Calibri;
+        font-size: 125%;
+        color: black;
+        background-color: white;
+	    border-radius: 7px 0 0 7px;
+	    float: left;
+	    line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .in_box{
+        border: 0;
+        height: 30px;
+        font-family: Calibri;
+        font-size: 125%;
+        color: black;
+        background-color: white;
+	    line-height: 30px;
+    }
+    .input_upload{
+	    border: 0;
+        height: 30px;
+        width: 25%;
+        font-family: Calibri;
+        font-size: 125%;
+        background-color: #8e0000;
+        color: white;
+	    border-radius: 0 7px 7px 0;
+	    float: right;
+	    line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+	}
+    .text_sec{
+        color: white;
+        text-align: center;
+        font-family: Calibri;
+        font-style: normal;
+        font-size: 125%;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+    .imatge{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 250px;
+        border-radius: 10px;
+        box-shadow: 0 1px 1px rgba(43, 66, 20,.5) inset, 0 1px 0 rgba(43, 66, 20,.2);
+    }
+    .span { font-style: bold; }
