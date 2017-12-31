@@ -2,7 +2,7 @@
 <html lang="en">
 
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <link href="https://fonts.googleapis.com/css?family=Kreon" rel="stylesheet">
         <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
         <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
@@ -13,14 +13,18 @@
     </head>
     <body>
     <div class="titol" id="title">
-        <h1 style="font-size: 250%;">Kalorika</h1>
+        <h1 id="title-big">Kalorika</h1>
     </div>
-    <form class="out_box" style="width: 500px; height: 30px;" method=post action="/upload-image" enctype=multipart/form-data>
+    <div class="text_sec">
+        <h2 id="text-ombra">Calculate the calories of what you are eating</h2>
+    </div>
+    <form class="out_box" id="box-short" method=post action="/upload-image"
+          enctype=multipart/form-data name="image-form">
         <input type="file" name="file" id="file" class="input_file"
                onchange="document.getElementById('file_name').value = this.value.split('\\').pop().split('/').pop()"
                multiple accept='image/*'>
-        <label for="file" >Choose file</label>
-        <input type="button" class="in_box" style="width: 50%; text-align: left;" id="file_name" value="No file chosen...">
+        <label for="file" >Select image</label>
+        <input type="button" class="in_box" id="file_name" value="No file chosen...">
         <input class ="input_upload" type="submit" value="Upload" >
    </form>
 </body>

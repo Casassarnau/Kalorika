@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link href="https://fonts.googleapis.com/css?family=Kreon" rel="stylesheet">
     <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16" />
@@ -12,11 +12,11 @@
 </head>
 <body>
     <div class="titol" id="title">
-        <h1 style="margin-top: 50px; margin-bottom: 50px;">Kalorika</h1>
+        <h1 id="title-small">Kalorika</h1>
     </div>
     <img class="imatge" src="/uploads/{{filename}}">
-    <div class="out_box" style="width: 400px; margin-top: 15px;">
-        <h2 class="text_sec" style=" font-size: 150%;">This picture contains:</h2>
+    <div class="out_box" id="box-long">
+        <h2 class="text_sec" id="text-sense-ombra">Serving contains:</h2>
         <p class="text_ter"><strong>Calories (Kcal): </strong>{{ kcal }}</p>
         <p class="text_ter"><strong>Fat (total): </strong>{{ fat }}g</p>
         <p class="text_ter"><strong>Carbohydrates (total): </strong>{{ carb }}g</p>

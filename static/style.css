@@ -1,28 +1,62 @@
-    html {
-        width: 100%;
+    html, body {
+        height: 100%;
+        margin:0;
     }
     body  {
         background-color: #2e7d32;
         background-image: url(http://www.transparenttextures.com/patterns/light-sketch.png);
     }
     .titol{
+        outline: none;
+        overflow: visible;
         text-align: center;
         color: white;
         font-family: 'Kreon', serif;
         font-style: normal;
-        font-size: 300%;
-        text-shadow: -2px -2px 1px #005005;
-        margin-top: 50px;
-        margin-bottom: 50px;
+        text-shadow: -0.025em -0.05em 0.025em #005005;
+        margin: 0 auto;
+    }
+    h1 {
+        margin: 0;
+    }
+    #title-big {
+        font-size: 9em;
+    }
+    #title-small {
+        font-size: 7em;
+    }
+    #text-ombra {
+        text-shadow: -0.025em -0.025em 0.025em #2b4214;
+    }
+    #file_name {
+        width: 50%;
+        text-align: left;
+    }
+    #in-box-select{
+        width:75%;
+        text-align: center;
+        border-radius: 0.35em 0 0 0.35em;
     }
     .out_box{
-        padding: 15px;
+        width: 30em;
+        outline: none;
+        padding: 1em;
         margin: 0 auto;
         background: rgba(0, 80, 5,.35);
-        border-radius: 10px;
-        box-shadow: 0 1px 1px rgba(0, 80, 5,.5) inset, 0 1px 0 rgba(0, 80, 5,.2);
+        border-radius: 1em;
+        box-shadow: 0 0.05em 0.05em rgba(0, 80, 5,.5) inset, 0 0.05em 0 rgba(0, 80, 5,.2);
+    }
+    #box-short {
+        height: 2em;
+    }
+    #box-long {
+        margin-top: 1em;
+    }
+    #text-sense-ombra {
+        font-size: 150%;
     }
     .text_ter {
+        outline: none;
         font-family: Calibri;
         font-size: 125%;
         color: white;
@@ -30,65 +64,100 @@
         font-style: normal;
     }
     .input_file {
-	    width: 0.1px;
-	    height: 0.1px;
+        outline: none;
+	    width: 0.0000001em;
+	    height: 0.0000001em;
 	    opacity: 0;
 	    overflow: hidden;
 	    position: absolute;
 	    z-index: -1;
 }
     .input_file + label{
+        outline: none;
         border: 0;
-        height: 30px;
+        height: 100%;
         width: 25%;
         font-family: Calibri;
         font-size: 125%;
         color: black;
         background-color: white;
-	    border-radius: 7px 0 0 7px;
+	    border-radius: 0.35em 0 0 0.35em;
 	    float: left;
-	    line-height: 30px;
+	    line-height: 1.7em;
         text-align: center;
         cursor: pointer;
     }
     .in_box{
+        outline: none;
         border: 0;
-        height: 30px;
+        height: 100%;
         font-family: Calibri;
         font-size: 125%;
         color: black;
         background-color: white;
-	    line-height: 30px;
     }
     .input_upload{
+        outline: none;
 	    border: 0;
-        height: 30px;
+        height: 100%;
         width: 25%;
         font-family: Calibri;
         font-size: 125%;
         background-color: #8e0000;
         color: white;
-	    border-radius: 0 7px 7px 0;
+	    border-radius: 0 0.35em 0.35em 0;
 	    float: right;
-	    line-height: 30px;
+	    line-height: 1.5em;
         text-align: center;
         cursor: pointer;
 	}
     .text_sec{
+        outline: none;
         color: white;
         text-align: center;
         font-family: Calibri;
         font-style: normal;
         font-size: 125%;
-        margin-top: 5px;
-        margin-bottom: 0px;
+        margin-top: 0.25em;
+
     }
     .imatge{
+        outline: none;
         display: block;
         margin-left: auto;
         margin-right: auto;
-        height: 250px;
-        border-radius: 10px;
-        box-shadow: 0 1px 1px rgba(43, 66, 20,.5) inset, 0 1px 0 rgba(43, 66, 20,.2);
+        height: 16em;
+        border-radius: 1em;
+        box-shadow: 0 0.15em 0 rgba(43, 66, 20,.2);
     }
     .span { font-style: bold; }
+
+    @media screen and (max-width: 480px) {
+        #title-big {
+            font-size: 5em;
+        }
+        #text-ombra {
+            font-size: 1.3em;
+        }
+        .out_box {
+            font-size: 70%;
+        }
+        #title-small{
+            font-size: 5em
+        }
+        #text-sense-ombra{
+            font-size: 2.5em;
+        }
+        .text_ter{
+            font-size: 1.5em;
+        }
+        .imatge{
+            height: 12em;
+        }
+        #file_name{
+            width: 40%;
+        }
+        .input_file + label{
+            width: 35%;
+        }
+    }

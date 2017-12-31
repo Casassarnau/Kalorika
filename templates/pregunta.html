@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link href="https://fonts.googleapis.com/css?family=Kreon" rel="stylesheet">
     <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
@@ -12,14 +12,14 @@
 </head>
 <body>
     <div class="titol" id="title">
-        <h1 style="margin-top: 50px; margin-bottom: 50px;">Kalorika</h1>
+        <h1 id="title-small">Kalorika</h1>
     </div>
     <img class="imatge" src="/uploads/{{filename}}">
-    <div class="text_sec" style="text-shadow: -1px -1px 1px #2b4214;">
-        <h2>Choose the main ingredient</h2>
+    <div class="text_sec">
+        <h2 id="text-ombra">Select the main ingredient</h2>
     </div>
-    <form class="out_box" style="width: 400px; height: 30px;" action="/upload-ingredient" enctype=multipart/form-data>
-        <select name="ingredient_principal" class="in_box" style="width:75%; text-align: center; border-radius: 7px 0 0 7px;">
+    <form class="out_box" action="/upload-ingredient" enctype=multipart/form-data id="box-short">
+        <select name="ingredient_principal" class="in_box" id="in-box-select">
             {% for ingredient in llista_ingr %}
                 <option value="{{ ingredient }}">{{ ingredient }}</option>
             {% endfor %}
