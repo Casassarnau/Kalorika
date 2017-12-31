@@ -23,6 +23,7 @@
             {% for ingredient in llista_ingr %}
                 <option value="{{ ingredient }}">{{ ingredient }}</option>
             {% endfor %}
+            <option value="no">Your ingredient isn't here</option>
         </select>
         <input type="hidden" value="{{ llista_ingr|join(',') }}" name="ingredients">
         <input class="input_upload" type="submit" value="Send">

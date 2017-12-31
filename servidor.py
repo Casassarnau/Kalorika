@@ -71,6 +71,8 @@ def index():
 def upload_ingredient():
     filename = request.args.get('filename')
     ingredient_principal = request.args.get('ingredient_principal')
+    if ingredient_principal == "no":
+        return redirect("http://kalorika.org", code=302)
     ingredients_sec=[]
     for x in request.args.get('ingredients').split(","):
         if x != ingredient_principal:

@@ -130,6 +130,22 @@
         border-radius: 1em;
         box-shadow: 0 0.15em 0 rgba(43, 66, 20,.2);
     }
+    .return{
+        box-shadow: -0.025em -0.025em 0.025em #2b4214;
+        width: 11em;
+        text-align: center;
+        background-color: #8e0000;
+        padding:0.5em;
+        border-radius: 0.35em;
+        margin: 0.7em auto;
+    }
+    .text-return{
+        font-weight: bold;
+        color: white;
+        text-decoration:none;
+        font-size: 125%;
+        font-family: Calibri;
+    }
     .span { font-style: bold; }
 
     @media screen and (max-width: 480px) {
@@ -159,5 +175,8 @@
         }
         .input_file + label{
             width: 35%;
+        }
+        .text-return{
+            font-size: 1.2em;
         }
     }
