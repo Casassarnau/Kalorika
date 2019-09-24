@@ -14,6 +14,7 @@ def tipus_ingr(llista_tipus, llista, ingredient, quantitat1, quantitat2):
     return quantitat_princ, quantitat_sec, res
 
 
+#Ingredients data
 def llista_pes(llista, ingredient):
     peixos = ["mackerel", "fish", "fish steak", "salmon steak", "fish fillet", "salmon", "bass", "sea bass",
               "fried calamari", "shrimp", "prawn"]
