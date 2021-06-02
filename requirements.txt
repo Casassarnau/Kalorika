@@ -22,5 +22,5 @@ pymongo==3.10.1
 requests==2.23.0
 six==1.14.0
 typing==3.7.4.1
-urllib3==1.25.8
+urllib3==1.26.5
 Werkzeug==1.0.0
